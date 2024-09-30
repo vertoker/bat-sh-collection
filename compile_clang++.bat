@@ -41,7 +41,10 @@ echo Warning tags: %Warnings%
 
 echo -----------------
 echo Compilation
-@echo on
-
 MkDir "%BuildFolder%"
+
+@echo on
 clang++ %Warnings% --std=%StdVersion% %OptimizationLevel% %CppFile% --output=%BuildFolder%%BuildName%.exe
+@echo off
+
+pause
