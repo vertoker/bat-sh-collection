@@ -3,5 +3,5 @@
 /.vscode
 
 # locations for the builds
-/.build
-/.builds
+/build
+/builds
