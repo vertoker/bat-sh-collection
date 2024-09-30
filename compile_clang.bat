@@ -29,6 +29,7 @@ echo Parameters
 echo Source file: %CFile%
 echo Build folder: %BuildFolder%
 echo .exe location: %BuildFolder%%BuildName%.exe
+echo .o location: %BuildFolder%%BuildName%.o
 
 echo C Standard: --std=%StdVersion%
 echo Optimization level: %OptimizationLevel%
@@ -38,8 +39,11 @@ echo -----------------
 echo Compilation
 MkDir "%BuildFolder%"
 
+rem Source -> Preprocessor -> Executable
+
 @echo on
-clang %Warnings% --std=%StdVersion% %OptimizationLevel% %CFile% --output=%BuildFolder%%BuildName%.exe
+clang %Warnings% --std=%StdVersion% %OptimizationLevel% -c %CFile% --output=%BuildFolder%%BuildName%.o
+clang %Warnings% --std=%StdVersion% %OptimizationLevel% %BuildFolder%%BuildName%.o --output=%BuildFolder%%BuildName%.exe
 @echo off
 
 pause
