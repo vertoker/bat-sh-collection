@@ -20,6 +20,9 @@ set /p StdVersion=Enter version of c++ standard (example: c17):
 echo Next select level of optimization (-O[level]) (-O0, -O1, -O2, -O3)
 set /p OptimizationLevel=Enter level of optimization (example: -O3): 
 
+echo Next select level of debugging (-g[level]) (-g0, -g1, -g2, -g3)
+set /p DebugLevel=Enter level of debug (example: -g3): 
+
 echo Denote warnings (-w for ignore, -W[warning] for specified warning) 
 echo -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wcast-align -Wconversion -Wsign-conversion -Wnull-dereference
 set /p Warnings=Enter warning tags (separated by a space) (example: -Wall -Wextra -Wpedantic): 
@@ -33,6 +36,7 @@ echo .o location: %BuildFolder%%BuildName%.o
 
 echo C Standard: --std=%StdVersion%
 echo Optimization level: %OptimizationLevel%
+echo Debug level: %DebugLevel%
 echo Warning tags: %Warnings%
 
 echo -----------------
@@ -42,8 +46,8 @@ MkDir "%BuildFolder%"
 rem Source -> Preprocessor -> Executable
 
 @echo on
-clang %Warnings% --std=%StdVersion% %OptimizationLevel% -c %CFile% --output=%BuildFolder%%BuildName%.o
-clang %Warnings% --std=%StdVersion% %OptimizationLevel% %BuildFolder%%BuildName%.o --output=%BuildFolder%%BuildName%.exe
+clang %Warnings% --std=%StdVersion% %DebugLevel% %OptimizationLevel% -c %CFile% --output=%BuildFolder%%BuildName%.o
+clang %Warnings% --std=%StdVersion% %DebugLevel% %OptimizationLevel% %BuildFolder%%BuildName%.o --output=%BuildFolder%%BuildName%.exe
 @echo off
 
 pause
