@@ -39,7 +39,7 @@ echo Compilation
 MkDir "%BuildFolder%"
 
 @echo on
-clang++ %Warnings% --std=%StdVersion% %OptimizationLevel% %CFile% --output=%BuildFolder%%BuildName%.exe
+clang %Warnings% --std=%StdVersion% %OptimizationLevel% %CFile% --output=%BuildFolder%%BuildName%.exe
 @echo off
 
 pause
