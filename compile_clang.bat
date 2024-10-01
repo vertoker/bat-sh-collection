@@ -15,7 +15,7 @@ echo Next how build must be named (--output=[filepath])
 set /p BuildName=Enter name for the build (example: example): 
 
 echo Next select standard of c (--std=[standard]) (c23, c17, c11, c99, c89)
-set /p StdVersion=Enter version of c++ standard (example: c17): 
+set /p StdVersion=Enter version of c standard (example: c17): 
 
 echo Next select level of optimization (-O[level]) (-O0, -O1, -O2, -O3)
 set /p OptimizationLevel=Enter level of optimization (example: -O3): 
