@@ -1,12 +1,12 @@
-echo "This is compiler config for clang compiler from LLVM for single .c file"
-echo "For launch this, you need installed clang and any compilable single *.c file"
+echo "This is compiler config for clang++ compiler from LLVM for single .cpp file"
+echo "For launch this, you need installed clang++ and any compilable single *.cpp file"
 echo "All file pathes RELATED TO THE CURRENT DIRECTORY, consider this!!!"
 echo "made by vertoker"
 echo "--------------------------"
 
-echo "First of all, script needs to know where is located your .c file"
-echo "Enter path to your single *.c file (example: ./main.c)"
-read CFile
+echo "First of all, script needs to know where is located your .cpp file"
+echo "Enter path to your single *.cpp file (example: ./main.cpp)"
+read CppFile
 
 echo "Next where build will be located"
 echo "Enter path to the build folder (example: ./build/)"
@@ -16,8 +16,8 @@ echo "Next how build must be named (--output=[filepath])"
 echo "Enter name for the build (example: example)"
 read BuildName
 
-echo "Next select standard of c (--std=[standard]) (c23, c17, c11, c99, c89)"
-echo "Enter version of c standard (example: c17)"
+echo "Next select standard of c++ (--std=[standard]) (c++23, c++20, c++17, c++14, c++11, c++03, c++98)"
+echo "Enter version of c standard (example: c++17)"
 read StdVersion
 
 echo "Next select level of optimization (-O[level]) (-O0, -O1, -O2, -O3)"
@@ -35,7 +35,7 @@ read Warnings
 
 echo -----------------
 echo "Parameters"
-echo "Source file: $CFile"
+echo "Source file: $CppFile"
 echo "Build folder: $BuildFolder"
 echo ".out location: $BuildFolder$BuildName.out"
 echo ".o location: $BuildFolder$BuildName.o"
@@ -49,9 +49,9 @@ echo -----------------
 echo "Compilation"
 mkdir $BuildFolder
 
-clang $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel -c $CFile --output="$BuildFolder$BuildName.o"
+clang++ $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel -c $CppFile --output="$BuildFolder$BuildName.o"
 echo "Create .o file at path $BuildFolder$BuildName.o"
 
-clang $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel "$BuildFolder$BuildName.o" --output="$BuildFolder$BuildName.out"
-echo "Create .out file at path $BuildFolder$BuildName.out"
+clang++ $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel "$BuildFolder$BuildName.o" --output="$BuildFolder$BuildName.out"
+echo "Create .out file at path $BuildFolder$BuildName.o"
 
