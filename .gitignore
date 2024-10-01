@@ -1,7 +1,3 @@
 
 # Yes, I use VSCode for testing
 /.vscode
-
-# locations for the builds
-/build
-/builds
