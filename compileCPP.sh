@@ -58,5 +58,5 @@ $CppCompiler $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel -c $CppF
 echo "Create .o file at path $BuildFolder$BuildName.o"
 
 $CppCompiler $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel "$BuildFolder$BuildName.o" --output="$BuildFolder$BuildName.out"
-echo "Create .out file at path $BuildFolder$BuildName.o"
+echo "Create .out file at path $BuildFolder$BuildName.out"
 
