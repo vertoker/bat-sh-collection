@@ -49,9 +49,9 @@ echo -----------------
 echo "Compilation"
 mkdir $BuildFolder
 
-clang $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel -c $CFile --output="$BuildFolder$BuildName.o"
+gcc $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel -c $CFile --output="$BuildFolder$BuildName.o"
 echo "Create .o file at path $BuildFolder$BuildName.o"
 
-clang $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel "$BuildFolder$BuildName.o" --output="$BuildFolder$BuildName.out"
+gcc $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel "$BuildFolder$BuildName.o" --output="$BuildFolder$BuildName.out"
 echo "Create .out file at path $BuildFolder$BuildName.out"
 
