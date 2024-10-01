@@ -1,4 +1,7 @@
 
 # locations for the builds
-/build
-/builds
+/[Bb]uild
+/[Bb]uilds
+
+# locations for the CMake cache
+/[Cc]ache
