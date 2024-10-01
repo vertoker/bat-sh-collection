@@ -1,10 +1,14 @@
-echo "This is compiler config for clang++ compiler from LLVM for single .cpp file"
-echo "For launch this, you need installed clang++ and any compilable single *.cpp file"
+echo "This is compiler config for single .cpp file"
+echo "For launch this, you need installed any C++ compiler (clang++ or g++) and any compilable single *.cpp file"
 echo "All file pathes RELATED TO THE CURRENT DIRECTORY, consider this!!!"
 echo "made by vertoker"
 echo "--------------------------"
 
-echo "First of all, script needs to know where is located your .cpp file"
+echo "First of all, script needs to know C++ compiler you want to use (clang++ or g++)"
+echo "Enter C++ compiler you want to use (example: clang++)"
+read CppCompiler
+
+echo "Next script needs to know where is located your .cpp file"
 echo "Enter path to your single *.cpp file (example: ./main.cpp)"
 read CppFile
 
@@ -35,6 +39,7 @@ read Warnings
 
 echo -----------------
 echo "Parameters"
+echo "C++ Compiler: $CppCompiler"
 echo "Source file: $CppFile"
 echo "Build folder: $BuildFolder"
 echo ".out location: $BuildFolder$BuildName.out"
@@ -49,9 +54,9 @@ echo -----------------
 echo "Compilation"
 mkdir $BuildFolder
 
-clang++ $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel -c $CppFile --output="$BuildFolder$BuildName.o"
+$CppCompiler $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel -c $CppFile --output="$BuildFolder$BuildName.o"
 echo "Create .o file at path $BuildFolder$BuildName.o"
 
-clang++ $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel "$BuildFolder$BuildName.o" --output="$BuildFolder$BuildName.out"
+$CppCompiler $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel "$BuildFolder$BuildName.o" --output="$BuildFolder$BuildName.out"
 echo "Create .out file at path $BuildFolder$BuildName.o"
 

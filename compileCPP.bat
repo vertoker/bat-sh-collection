@@ -1,12 +1,12 @@
 @echo off
 echo This is compiler config for single .cpp file 
-echo For launch this, you need installed any compiler (clang++ or g++) and any single *.cpp file (which must be compilable of course)
+echo For launch this, you need installed any C++ compiler (clang++ or g++) and any single *.cpp file (which must be compilable of course)
 echo All file pathes RELATED TO THE CURRENT DIRECTORY, consider this!!!
 echo made by vertoker
 echo -----------------
 
-echo First of all, script needs to know compiler you want to use (clang++ or g++)
-set /p Compiler=Enter compiler you want to use (example: clang++): 
+echo First of all, script needs to know C++ compiler you want to use (clang++ or g++)
+set /p CppCompiler=Enter C++ compiler you want to use (example: clang++): 
 
 echo Next script needs to know where is located your .cpp file
 set /p CppFile=Enter path to your single *.cpp file (example: ./main.cpp): 
@@ -32,7 +32,7 @@ set /p Warnings=Enter warning tags (separated by a space) (example: -Wall -Wextr
 
 echo -----------------
 echo Parameters
-echo CPP Compiler: %Compiler%
+echo C++ Compiler: %CppCompiler%
 echo Source file: %CppFile%
 echo Build folder: %BuildFolder%
 echo .exe location: %BuildFolder%%BuildName%.exe
@@ -50,8 +50,8 @@ MkDir "%BuildFolder%"
 rem Source -> Preprocessor -> Executable
 
 @echo on
-%Compiler% %Warnings% --std=%StdVersion% %OptimizationLevel% %DebugLevel% -c %CppFile% --output=%BuildFolder%%BuildName%.o
-%Compiler% %Warnings% --std=%StdVersion% %OptimizationLevel% %DebugLevel% %BuildFolder%%BuildName%.o --output=%BuildFolder%%BuildName%.exe
+%CppCompiler% %Warnings% --std=%StdVersion% %OptimizationLevel% %DebugLevel% -c %CppFile% --output=%BuildFolder%%BuildName%.o
+%CppCompiler% %Warnings% --std=%StdVersion% %OptimizationLevel% %DebugLevel% %BuildFolder%%BuildName%.o --output=%BuildFolder%%BuildName%.exe
 @echo off
 
 pause

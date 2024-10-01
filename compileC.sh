@@ -1,10 +1,14 @@
-echo "This is compiler config for clang compiler from LLVM for single .c file"
-echo "For launch this, you need installed clang and any compilable single *.c file"
+echo "This is compiler config for single .c file"
+echo "For launch this, you need installed any C compiler (clang or gcc) and any compilable single *.c file"
 echo "All file pathes RELATED TO THE CURRENT DIRECTORY, consider this!!!"
 echo "made by vertoker"
 echo "--------------------------"
 
-echo "First of all, script needs to know where is located your .c file"
+echo "First of all, script needs to know C compiler you want to use (clang or gcc)"
+echo "Enter C compiler you want to use (example: clang)"
+read CCompiler
+
+echo "Next script needs to know where is located your .c file"
 echo "Enter path to your single *.c file (example: ./main.c)"
 read CFile
 
@@ -35,6 +39,7 @@ read Warnings
 
 echo -----------------
 echo "Parameters"
+echo "C Compiler: $CCompiler"
 echo "Source file: $CFile"
 echo "Build folder: $BuildFolder"
 echo ".out location: $BuildFolder$BuildName.out"
@@ -49,9 +54,9 @@ echo -----------------
 echo "Compilation"
 mkdir $BuildFolder
 
-gcc $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel -c $CFile --output="$BuildFolder$BuildName.o"
+$CCompiler $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel -c $CFile --output="$BuildFolder$BuildName.o"
 echo "Create .o file at path $BuildFolder$BuildName.o"
 
-gcc $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel "$BuildFolder$BuildName.o" --output="$BuildFolder$BuildName.out"
+$CCompiler $Warnings --std=$StdVersion $DebugLevel $OptimizationLevel "$BuildFolder$BuildName.o" --output="$BuildFolder$BuildName.out"
 echo "Create .out file at path $BuildFolder$BuildName.out"
 

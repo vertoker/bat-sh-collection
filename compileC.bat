@@ -1,12 +1,12 @@
 @echo off
 echo This is compiler config for single .c file 
-echo For launch this, you need installed any compiler (clang or gcc) and any single *.c file (which must be compilable of course)
+echo For launch this, you need installed any C compiler (clang or gcc) and any single *.c file (which must be compilable of course)
 echo All file pathes RELATED TO THE CURRENT DIRECTORY, consider this!!!
 echo made by vertoker
 echo -----------------
 
-echo First of all, script needs to know compiler you want to use (clang or gcc)
-set /p Compiler=Enter compiler you want to use (example: clang): 
+echo First of all, script needs to know C compiler you want to use (clang or gcc)
+set /p CCompiler=Enter C compiler you want to use (example: clang): 
 
 echo Next script needs to know where is located your .c file
 set /p CFile=Enter path to your single *.c file (example: ./main.c): 
@@ -32,7 +32,7 @@ set /p Warnings=Enter warning tags (separated by a space) (example: -Wall -Wextr
 
 echo -----------------
 echo Parameters
-echo C Compiler: %Compiler%
+echo C Compiler: %CCompiler%
 echo Source file: %CFile%
 echo Build folder: %BuildFolder%
 echo .exe location: %BuildFolder%%BuildName%.exe
@@ -50,8 +50,8 @@ MkDir "%BuildFolder%"
 rem Source -> Preprocessor -> Executable
 
 @echo on
-%Compiler% %Warnings% --std=%StdVersion% %DebugLevel% %OptimizationLevel% -c %CFile% --output=%BuildFolder%%BuildName%.o
-%Compiler% %Warnings% --std=%StdVersion% %DebugLevel% %OptimizationLevel% %BuildFolder%%BuildName%.o --output=%BuildFolder%%BuildName%.exe
+%CCompiler% %Warnings% --std=%StdVersion% %DebugLevel% %OptimizationLevel% -c %CFile% --output=%BuildFolder%%BuildName%.o
+%CCompiler% %Warnings% --std=%StdVersion% %DebugLevel% %OptimizationLevel% %BuildFolder%%BuildName%.o --output=%BuildFolder%%BuildName%.exe
 @echo off
 
 pause
