@@ -54,4 +54,4 @@ rem Source -> Preprocessor -> Executable
 %CCompiler% %Warnings% --std=%StdVersion% %DebugLevel% %OptimizationLevel% %BuildFolder%%BuildName%.o --output=%BuildFolder%%BuildName%.exe
 @echo off
 
-pause
+rem pause
