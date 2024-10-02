@@ -2,6 +2,8 @@
 # locations for the builds
 /[Bb]uild
 /[Bb]uilds
+/[Oo]ut
 
 # locations for the CMake cache
 /[Cc]ache
+
