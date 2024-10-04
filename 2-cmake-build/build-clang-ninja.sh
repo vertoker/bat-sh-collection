@@ -1,6 +1,7 @@
-echo build project using cmake
-echo using clang/clang++ compilers
-echo and ninja
+echo build project using
+echo - cmake
+echo - clang/clang++ compilers
+echo - ninja
 
 mkdir out/
 cd out/
