@@ -12,3 +12,6 @@ Dependencies
 - LLVM compilers (clang for C, clang++ for C++)
 - GNU compilers (gcc for C, g++ for C++)
 - Debuggers (lldb for LLVM, gdb for GNU)
+
+TODO add to the links
+https://youtu.be/NGPo7mz1oa4?si=79HTiygHocXkhoN_
