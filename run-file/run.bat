@@ -2,6 +2,7 @@
 rem This script compile code using g++
 rem First parameter $1 must be file name (use Tab for auto complete)
 rem Other next parameters will be pasted as parameters for compiler
+rem made by vertoker
 
 rem Variables
 set ROOT_PATH=%cd%\

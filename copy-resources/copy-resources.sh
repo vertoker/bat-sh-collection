@@ -3,6 +3,7 @@
 # It deletes resources folder and replace it with copy of origin resources
 # made by vertoker
 
+# Variables
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # cd "$SCRIPT_DIR/.."
 

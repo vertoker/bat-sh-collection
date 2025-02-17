@@ -1,7 +1,9 @@
 # This script compile code using g++
 # First parameter $1 must be file name (use Tab for auto complete)
 # Other next parameters will be pasted as parameters for compiler
+# made by vertoker
 
+# Variables
 BaseDir="$(pwd)"
 BuildDirectory="out/"
 #echo $BaseDir

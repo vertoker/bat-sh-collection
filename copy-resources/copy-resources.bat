@@ -8,6 +8,7 @@ setlocal
 cd /d %~dp0
 rem cd ..
 
+rem Variables
 set SOURCE=%cd%\resources
 set DEBUG=%cd%\out\Debug\resources
 set RELEASE=%cd%\out\Release\resources

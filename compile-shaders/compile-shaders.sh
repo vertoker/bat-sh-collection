@@ -4,6 +4,7 @@
 # !!! Add your own shaders before launch it !!!
 # made by vertoker
 
+# Variables
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # cd "$SCRIPT_DIR/.."
 

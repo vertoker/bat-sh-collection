@@ -9,6 +9,7 @@ setlocal
 cd /d %~dp0
 rem cd ..
 
+rem Variables
 set RESOURCES_INPUT=%cd%\src\shaders\
 set RESOURCES_OUTPUT=%cd%\resources\ShaderCache\
 
