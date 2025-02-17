@@ -7,7 +7,7 @@ rem made by vertoker
 
 setlocal
 cd /d %~dp0
-cd ..
+rem cd ..
 
 set RESOURCES_INPUT=%cd%\src\shaders\
 set RESOURCES_OUTPUT=%cd%\resources\ShaderCache\

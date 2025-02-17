@@ -6,7 +6,7 @@ rem made by vertoker
 
 setlocal
 cd /d %~dp0
-cd ..
+rem cd ..
 
 set SOURCE=%cd%\resources
 set DEBUG=%cd%\out\Debug\resources
