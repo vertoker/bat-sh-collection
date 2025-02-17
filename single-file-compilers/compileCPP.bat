@@ -1,7 +1,7 @@
 @echo off
 echo This is compiler config for single .cpp file 
 echo For launch this, you need installed any C++ compiler (clang++ or g++) and any single *.cpp file (which must be compilable of course)
-echo All file pathes RELATED TO THE CURRENT DIRECTORY, consider this!!!
+echo All file paths RELATED TO THE CURRENT DIRECTORY, consider this!!!
 echo made by vertoker
 echo -----------------
 

@@ -1,7 +1,7 @@
 @echo off
 echo This is compiler config for single .c file 
 echo For launch this, you need installed any C compiler (clang or gcc) and any single *.c file (which must be compilable of course)
-echo All file pathes RELATED TO THE CURRENT DIRECTORY, consider this!!!
+echo All file paths RELATED TO THE CURRENT DIRECTORY, consider this!!!
 echo made by vertoker
 echo -----------------
 
